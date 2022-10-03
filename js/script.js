@@ -46,7 +46,7 @@ $(function () {
         radius: 60
     });
 
-    // slider
+    // sliders
     $('.main__slider').slick({
         centerMode: true,
         speed: 1000,
@@ -63,6 +63,33 @@ $(function () {
                 slidesToShow: 3
               }
             },
+        ]
+    });
+
+    $('.choise__slider').slick({
+        slidesToShow: 4,
+        prevArrow: $('#choise-prev'),
+        nextArrow: $('#choise-next'),
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1088,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 835,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 555,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
         ]
     });
 
@@ -83,5 +110,22 @@ $(function () {
         if ($(window).width() > 992.98) {
             var mainParallaxInstance = new Parallax(mainBefore);
         }
+    });
+
+    // marquee
+    $('#choise__marquee-blue').endlessScroll({
+        width: "105%", // Ширина строки
+        height: "60px", // Высота строки
+        steps: -2, // Шаг анимации в пикселях. Если число отрицательное - движение влево, положительное - вправо
+        speed: 30, // Скорость анимации (0 - максимальная)
+        mousestop: false, // Останавливать ли полосу при наведении мыши (да - true, нет - false)
+    });
+
+    $('#choise__marquee-white').endlessScroll({
+        width: "105%", // Ширина строки
+        height: "60px", // Высота строки
+        steps: -2, // Шаг анимации в пикселях. Если число отрицательное - движение влево, положительное - вправо
+        speed: 30, // Скорость анимации (0 - максимальная)
+        mousestop: false, // Останавливать ли полосу при наведении мыши (да - true, нет - false)
     });
 });
